@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1a1210">
+<title>Кузница Героя: Капибара-Кузнец</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://yandex.ru/games/sdk/v2"></script>
+</head>
+<body class="boot">
+<script>
+  window.__errs = [];
+  window.addEventListener('error', function (e) { window.__errs.push(e.message + ' @ ' + (e.filename || '') + ':' + e.lineno); });
+  window.addEventListener('unhandledrejection', function (e) { window.__errs.push('PROMISE: ' + ((e.reason && e.reason.message) || e.reason)); });
+</script>
+<div id="app">
+
+  <!-- ================= АРЕНА (35%) ================= -->
+  <section id="arena">
+    <div id="arenaShake">
+      <div id="bg"></div>
+      <div id="heroWrap">
+        <div id="hero"></div>
+        <div id="heroWeapon"></div>
+        <div id="petsFly"></div>
+        <div id="berserkAura"></div>
+      </div>
+      <div id="enemyWrap">
+        <div id="enemyInfo">
+          <div id="enemyName"></div>
+          <div id="enemyHpBar"><div id="enemyHpFill"></div></div>
+        </div>
+        <div id="enemy"></div>
+      </div>
+    </div>
+    <div id="hud">
+      <div class="hudRes" id="hudGold"><span class="rIcon"></span><span class="rVal" id="goldVal">0</span></div>
+      <div class="hudRes" id="hudGems"><span class="rIcon"></span><span class="rVal" id="gemVal">0</span></div>
+      <div class="hudRes" id="hudStones"><span class="rIcon"></span><span class="rVal" id="stoneVal">0</span></div>
+      <div id="hudBtns">
+        <button id="muteBtn" class="icoBtn" title="Mute"></button>
+      </div>
+    </div>
+    <div id="waveInfo"></div>
+    <div id="bossTimer" class="hidden">
+      <div id="bossTimerFill"></div>
+      <span id="bossTimerText"></span>
+    </div>
+    <button id="berserkBtn" class="adBtn hidden"></button>
+    <div id="drone"></div>
+  </section>
+
+  <!-- ================= ВКЛАДКИ: сбоку на ПК / снизу на телефоне ================= -->
+  <section id="main">
+    <nav id="tabbar">
+      <button class="tabBtn" data-tab="forge"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+      <button class="tabBtn" data-tab="upgrades"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+      <button class="tabBtn" data-tab="pets"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+      <button class="tabBtn" data-tab="prestige"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+      <button class="tabBtn" data-tab="ency"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+      <button class="tabBtn" data-tab="quests"><span class="tabIco"></span><span class="tabLbl"></span><i class="tabDot hidden"></i></button>
+    </nav>
+    <div id="viewwrap">
+
+      <!-- КУЗНИЦА (вкладка «forge») -->
+      <section id="forge">
+        <div id="forgeInner">
+        <div id="forgeLeft">
+          <div id="equipWrap">
+            <div id="equipLabel"></div>
+            <div id="equipSlot" class="slot equip"></div>
+            <div id="equipStats"></div>
+          </div>
+          <button id="anvilBtn">
+            <span id="anvilIcon"></span>
+            <span id="anvilLabel"></span>
+            <span id="anvilLvl"></span>
+            <span id="anvilBar"><span id="anvilFill"></span></span>
+            <span id="anvilTimerText"></span>
+          </button>
+          <button id="boostBtn" class="adBtn"></button>
+          <div id="trashSlot"><span id="trashIco"></span><span id="trashLbl"></span></div>
+          <div id="trashHint"></div>
+        </div>
+        <div id="gridWrap"><div id="grid"></div></div>
+        </div>
+      </section>
+
+      <!-- КОНТЕНТ ВКЛАДОК -->
+      <div id="tabwrap" class="hidden"><div id="tabpanel"></div></div>
+    </div>
+  </section>
+
+  <canvas id="fx"></canvas>
+  <div id="modalRoot" class="hidden"></div>
+  <div id="toastRoot"></div>
+  <div id="adOverlay" class="hidden"></div>
+  <div id="dragGhost" class="hidden"></div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/art.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

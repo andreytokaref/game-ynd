@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<style>html,body{margin:0;padding:0;background:#1a1210;overflow:hidden}svg{display:block}</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="../js/i18n.js"></script>
+<script src="../js/art.js"></script>
+<script>
+(function () {
+  document.getElementById('root').innerHTML =
+  `<svg width="800" height="470" viewBox="0 0 800 470" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#8fd8ff"/>
+        <stop offset="1" stop-color="#eaf7c8"/>
+      </linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#ffd54f" stop-opacity=".9"/>
+        <stop offset="1" stop-color="#ffd54f" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="800" height="470" fill="url(#sky)"/>
+    <!-- деревня Нубов -->
+    <g opacity=".95">
+      <path d="M0 330 Q200 290 400 320 T800 310 L800 470 L0 470 Z" fill="#7cc25e"/>
+      <path d="M0 400 Q400 372 800 396 L800 470 L0 470 Z" fill="#58a844"/>
+      <g transform="translate(560 208) scale(1.15)">
+        <rect x="0" y="46" width="86" height="60" fill="#b0793f" stroke="#5a3a18" stroke-width="4"/>
+        <path d="M-10 50 L43 14 L96 50 Z" fill="#d8a94e" stroke="#8a6a20" stroke-width="4"/>
+        <rect x="30" y="72" width="22" height="34" fill="#5a3a18"/>
+      </g>
+      <g transform="translate(30 250) scale(.8)">
+        <rect x="0" y="46" width="86" height="60" fill="#b0793f" stroke="#5a3a18" stroke-width="4"/>
+        <path d="M-10 50 L43 14 L96 50 Z" fill="#c88a3a" stroke="#8a6a20" stroke-width="4"/>
+      </g>
+      <circle cx="120" cy="80" r="38" fill="#ffe95c" stroke="#f4c80a" stroke-width="5"/>
+    </g>
+    <!-- свечение за героем -->
+    <ellipse cx="300" cy="300" rx="220" ry="170" fill="url(#glow)" opacity=".5"/>
+    <!-- капибара с мечом -->
+    <g transform="translate(196 170) scale(1.95) rotate(-3 70 70)">
+      ${Art.hero(140)}
+    </g>
+    <g transform="translate(330 250) scale(1.9) rotate(40 50 50)">
+      ${Art.weapon(9, 100)}
+    </g>
+    <!-- враг-гриб -->
+    <g transform="translate(520 208) scale(1.75)">
+      ${Art.monster(1, 100, false)}
+    </g>
+    <!-- монетки -->
+    <g>
+      <circle cx="470" cy="150" r="17" fill="#ffd23f" stroke="#8a5a10" stroke-width="4"/>
+      <circle cx="500" cy="128" r="12" fill="#ffd23f" stroke="#8a5a10" stroke-width="3.4"/>
+      <circle cx="444" cy="120" r="10" fill="#ffd23f" stroke="#8a5a10" stroke-width="3"/>
+      <circle cx="712" cy="330" r="14" fill="#ffd23f" stroke="#8a5a10" stroke-width="3.6"/>
+    </g>
+    <!-- заголовок -->
+    <g font-family="Segoe UI, Arial, sans-serif" font-weight="900" text-anchor="middle">
+      <text x="400" y="96" font-size="72" fill="#2a1808" opacity=".5" transform="translate(0 5)">КУЗНИЦА ГЕРОЯ</text>
+      <text x="400" y="96" font-size="72" fill="#ffd54f" stroke="#2a1808" stroke-width="3">КУЗНИЦА ГЕРОЯ</text>
+      <text x="400" y="140" font-size="30" fill="#fff" stroke="#2a1808" stroke-width="1.6">Капибара-Кузнец: от нуба до бога</text>
+    </g>
+    <!-- бейдж жанра -->
+    <g transform="translate(608 404)">
+      <rect x="0" y="0" width="176" height="46" rx="23" fill="#2b1d16" stroke="#ffd54f" stroke-width="4"/>
+      <text x="88" y="31" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="22" fill="#ffd54f" text-anchor="middle">idle • merge • RPG</text>
+    </g>
+  </svg>`;
+  document.title = 'cover-ready';
+})();
+</script>
+</body>
+</html>
